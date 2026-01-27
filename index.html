@@ -1,0 +1,1376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modernize Your Trade Business with 24/7 AI | Mautomate AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0a0a0c;
+            --bg-card: #111114;
+            --bg-glass: rgba(17, 17, 20, 0.8);
+            --gold: #c9a227;
+            --gold-light: #e5c76b;
+            --gold-dark: #9a7b1a;
+            --text: #f5f5f5;
+            --text-muted: #888888;
+            --border: rgba(255, 255, 255, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-weight: 600;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1.5rem 0;
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            background: var(--bg-glass);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--gold-light), var(--gold), var(--gold-dark));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-icon svg {
+            width: 20px;
+            height: 20px;
+            color: var(--bg);
+        }
+
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .logo-text span {
+            color: var(--gold);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--text);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 12px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 0.95rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--gold-light), var(--gold), var(--gold-dark));
+            color: var(--bg);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px -10px rgba(201, 162, 39, 0.5);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--text);
+            border: 1px solid var(--border);
+        }
+
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .btn-lg {
+            padding: 1rem 2rem;
+            font-size: 1rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 8rem 2rem 4rem;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+        }
+
+        .hero-glow-1 {
+            position: absolute;
+            top: 20%;
+            left: 20%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(201, 162, 39, 0.15), transparent 70%);
+            border-radius: 50%;
+            filter: blur(80px);
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        .hero-glow-2 {
+            position: absolute;
+            bottom: 20%;
+            right: 20%;
+            width: 350px;
+            height: 350px;
+            background: radial-gradient(circle, rgba(201, 162, 39, 0.08), transparent 70%);
+            border-radius: 50%;
+            filter: blur(60px);
+            animation: pulse 4s ease-in-out infinite 2s;
+        }
+
+        .hero-grid {
+            position: absolute;
+            inset: 0;
+            background-image: 
+                linear-gradient(rgba(201, 162, 39, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(201, 162, 39, 0.03) 1px, transparent 1px);
+            background-size: 60px 60px;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.4; }
+            50% { opacity: 0.8; }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            max-width: 900px;
+            text-align: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: var(--bg-glass);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border);
+            border-radius: 9999px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        .badge svg {
+            width: 16px;
+            height: 16px;
+            color: var(--gold);
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, var(--gold-light), var(--gold), var(--gold-dark));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .trade-word {
+            display: inline-block;
+            min-width: 200px;
+            font-style: italic;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .hero p span {
+            color: var(--gold);
+            font-weight: 600;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-note {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .trust-card {
+            background: var(--bg-glass);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 2rem;
+            max-width: 600px;
+            margin: 3rem auto 0;
+        }
+
+        .trust-card p {
+            font-size: 0.95rem;
+            font-style: italic;
+            margin-bottom: 1.5rem;
+        }
+
+        .trust-author {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .trust-avatar {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--gold-light), var(--gold), var(--gold-dark));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: var(--bg);
+            font-size: 1.1rem;
+        }
+
+        .trust-author-info {
+            text-align: left;
+        }
+
+        .trust-author-info .name {
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .trust-author-info .title {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(10px); }
+        }
+
+        /* Section Styles */
+        section {
+            padding: 6rem 2rem;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 4rem;
+        }
+
+        .section-badge {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            background: var(--bg-glass);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border);
+            border-radius: 9999px;
+            font-size: 0.8rem;
+            color: var(--gold);
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+        }
+
+        .section-header h2 {
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        /* Problems Section */
+        .problems-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .problem-card {
+            background: var(--bg-glass);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .problem-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(201, 162, 39, 0.3);
+            box-shadow: 0 20px 40px -20px rgba(201, 162, 39, 0.2);
+        }
+
+        .problem-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(201, 162, 39, 0.1);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .problem-card:hover .problem-icon {
+            background: rgba(201, 162, 39, 0.2);
+        }
+
+        .problem-icon svg {
+            width: 28px;
+            height: 28px;
+            color: var(--gold);
+        }
+
+        .problem-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .problem-card p {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .problem-stat {
+            display: flex;
+            align-items: baseline;
+            gap: 0.5rem;
+        }
+
+        .problem-stat .number {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--gold-light), var(--gold), var(--gold-dark));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .problem-stat .label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* How It Works Section */
+        .steps-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            position: relative;
+        }
+
+        .step {
+            text-align: center;
+            position: relative;
+        }
+
+        .step-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 5rem;
+            font-weight: 700;
+            color: rgba(201, 162, 39, 0.15);
+            position: absolute;
+            top: -1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 0;
+        }
+
+        .step-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--bg-glass);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .step-icon::before {
+            content: '';
+            position: absolute;
+            inset: -5px;
+            background: rgba(201, 162, 39, 0.2);
+            border-radius: 50%;
+            filter: blur(15px);
+            z-index: -1;
+        }
+
+        .step-icon svg {
+            width: 32px;
+            height: 32px;
+            color: var(--gold);
+        }
+
+        .step h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .step p {
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            max-width: 800px;
+            margin: 4rem auto 0;
+        }
+
+        .feature-item {
+            background: var(--bg-glass);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .feature-item svg {
+            width: 24px;
+            height: 24px;
+            color: var(--gold);
+            margin-bottom: 0.75rem;
+        }
+
+        .feature-item .label {
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .feature-item .desc {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        /* Pricing Section */
+        .pricing-container {
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .pricing-glow {
+            position: absolute;
+            inset: -20px;
+            background: linear-gradient(135deg, var(--gold-light), var(--gold), var(--gold-dark));
+            border-radius: 32px;
+            filter: blur(30px);
+            opacity: 0.2;
+        }
+
+        .pricing-card {
+            background: var(--bg-glass);
+            backdrop-filter: blur(20px);
+            border: 2px solid rgba(201, 162, 39, 0.3);
+            border-radius: 24px;
+            padding: 3rem;
+            position: relative;
+        }
+
+        .pricing-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, var(--gold-light), var(--gold), var(--gold-dark));
+            color: var(--bg);
+            padding: 0.4rem 1.5rem;
+            border-radius: 9999px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .pricing-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .pricing-header h3 {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .price {
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .price .amount {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--gold-light), var(--gold), var(--gold-dark));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .price .period {
+            color: var(--text-muted);
+        }
+
+        .pricing-header > p {
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+        }
+
+        .features-list {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .features-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            padding: 0.75rem 0;
+            border-bottom: 1px dashed var(--border);
+        }
+
+        .features-list li:last-child {
+            border-bottom: none;
+        }
+
+        .check-icon {
+            width: 20px;
+            height: 20px;
+            background: rgba(201, 162, 39, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .check-icon svg {
+            width: 12px;
+            height: 12px;
+            color: var(--gold);
+        }
+
+        .features-list li span {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .features-list li strong {
+            color: var(--text);
+        }
+
+        .pricing-footer {
+            text-align: center;
+        }
+
+        .pricing-footer .btn {
+            width: 100%;
+            justify-content: center;
+        }
+
+        .pricing-note {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 1rem;
+        }
+
+        /* Contact Section */
+        .contact-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-form {
+            background: var(--bg-glass);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 2.5rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            color: var(--text);
+            font-size: 0.95rem;
+            transition: all 0.3s;
+            font-family: inherit;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: rgba(201, 162, 39, 0.5);
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: var(--text-muted);
+        }
+
+        .form-group textarea {
+            resize: none;
+            min-height: 100px;
+        }
+
+        .form-footer {
+            text-align: center;
+            margin-top: 1.5rem;
+        }
+
+        .form-footer .btn {
+            width: 100%;
+            justify-content: center;
+        }
+
+        .whatsapp-link {
+            color: var(--gold);
+            text-decoration: none;
+        }
+
+        .whatsapp-link:hover {
+            text-decoration: underline;
+        }
+
+        .success-message {
+            text-align: center;
+            padding: 3rem;
+        }
+
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(201, 162, 39, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+        }
+
+        .success-icon svg {
+            width: 40px;
+            height: 40px;
+            color: var(--gold);
+        }
+
+        .success-message h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .success-message p {
+            color: var(--text-muted);
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 2rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-content {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer-logo-icon {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, var(--gold-light), var(--gold), var(--gold-dark));
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .footer-logo-icon svg {
+            width: 16px;
+            height: 16px;
+            color: var(--bg);
+        }
+
+        .footer-logo-text {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+        }
+
+        .footer-logo-text span {
+            color: var(--gold);
+        }
+
+        .footer-tagline {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            text-align: center;
+            max-width: 400px;
+        }
+
+        .footer-copy {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        /* WhatsApp Float */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 30px -10px rgba(37, 211, 102, 0.5);
+            transition: all 0.3s;
+            z-index: 1000;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+
+        .whatsapp-float svg {
+            width: 30px;
+            height: 30px;
+            color: white;
+            fill: white;
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                padding: 7rem 1.5rem 3rem;
+            }
+
+            section {
+                padding: 4rem 1.5rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .contact-form {
+                padding: 1.5rem;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: rgba(201, 162, 39, 0.3);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(201, 162, 39, 0.5);
+        }
+    </style>
+<base target="_blank">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <div class="logo-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                </div>
+                <span class="logo-text">Mautomate <span>AI</span></span>
+            </a>
+            <div class="nav-links">
+                <a href="#problems">Problems</a>
+                <a href="#how">How it Works</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#contact" class="btn btn-primary">Free Audit</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg">
+            <div class="hero-glow-1"></div>
+            <div class="hero-glow-2"></div>
+            <div class="hero-grid"></div>
+        </div>
+        <div class="hero-content">
+            <div class="badge">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                </svg>
+                AI-Powered Business Automation
+            </div>
+            <h1>
+                Modernize Your<br>
+                <span class="text-gradient trade-word" id="trade-word">Plumbing</span> Business
+            </h1>
+            <p>
+                Capture more leads and save <span>10+ hours a week</span> using custom AI assistants. 
+                No tech skills required from you.
+            </p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn btn-primary btn-lg">
+                    Get a Free Audit
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </a>
+                <a href="#" class="btn btn-outline btn-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--gold);"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                    Watch 30-sec Demo
+                </a>
+            </div>
+            <p class="hero-note">Free 30-minute audit • No obligations • See results in 48 hours</p>
+            
+            <div class="trust-card">
+                <p>"Most businesses are still running on 2010 technology. Mautomate installs a 'Digital Brain' into your current workflow. We don't change how you work; we just make the repetitive parts happen automatically so you can focus on the craftsmanship."</p>
+                <div class="trust-author">
+                    <div class="trust-avatar">YN</div>
+                    <div class="trust-author-info">
+                        <div class="name">Your Name</div>
+                        <div class="title">Local AI Builder & Founder</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+        </div>
+    </section>
+
+    <!-- Problems Section -->
+    <section id="problems">
+        <div class="section-header fade-in">
+            <span class="section-badge">The Problem</span>
+            <h2>Stop Bleeding <span class="text-gradient">Time & Money</span></h2>
+            <p>Traditional businesses are losing thousands in missed opportunities and wasted hours. Here's how we fix it.</p>
+        </div>
+        <div class="problems-grid">
+            <div class="problem-card fade-in">
+                <div class="problem-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z" />
+                    </svg>
+                </div>
+                <h3>Missing Calls?</h3>
+                <p>My AI Chatbots answer customers instantly—even at 3 AM—so you never lose another job to voicemail.</p>
+                <div class="problem-stat">
+                    <span class="number">87%</span>
+                    <span class="label">of leads prefer instant response</span>
+                </div>
+            </div>
+            <div class="problem-card fade-in">
+                <div class="problem-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                </div>
+                <h3>Drowning in Paperwork?</h3>
+                <p>I build tools that read your invoices and organise your data automatically, freeing up nights & weekends.</p>
+                <div class="problem-stat">
+                    <span class="number">10+</span>
+                    <span class="label">hours saved per week</span>
+                </div>
+            </div>
+            <div class="problem-card fade-in">
+                <div class="problem-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                </div>
+                <h3>Manual Scheduling?</h3>
+                <p>Your AI assistant syncs with your calendar to book appointments while you sleep—no double-bookings, no back-and-forth.</p>
+                <div class="problem-stat">
+                    <span class="number">24/7</span>
+                    <span class="label">automated booking</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how">
+        <div class="section-header fade-in">
+            <span class="section-badge">The Process</span>
+            <h2>How It Works—<span class="text-gradient">3 Simple Steps</span></h2>
+            <p>From discovery to deployment in under 48 hours. No technical knowledge required.</p>
+        </div>
+        <div class="steps-container">
+            <div class="steps-grid">
+                <div class="step fade-in">
+                    <span class="step-number">01</span>
+                    <div class="step-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                        </svg>
+                    </div>
+                    <h3>Discovery</h3>
+                    <p>10-minute phone call: we map your current workflow and spot the biggest time-wasters.</p>
+                </div>
+                <div class="step fade-in">
+                    <span class="step-number">02</span>
+                    <div class="step-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                    </div>
+                    <h3>Setup</h3>
+                    <p>I build and install your custom AI tool—chatbot, invoice reader, scheduler—whatever you need.</p>
+                </div>
+                <div class="step fade-in">
+                    <span class="step-number">03</span>
+                    <div class="step-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                        </svg>
+                    </div>
+                    <h3>Growth</h3>
+                    <p>You save hours every week and stop losing leads. Monthly tweaks keep you improving on autopilot.</p>
+                </div>
+            </div>
+            <div class="features-grid">
+                <div class="feature-item fade-in">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <div class="label">48hr Setup</div>
+                    <div class="desc">Quick deployment</div>
+                </div>
+                <div class="feature-item fade-in">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                    <div class="label">No Contracts</div>
+                    <div class="desc">Cancel anytime</div>
+                </div>
+                <div class="feature-item fade-in">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                    <div class="label">AI Powered</div>
+                    <div class="desc">Latest technology</div>
+                </div>
+                <div class="feature-item fade-in">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                    </svg>
+                    <div class="label">Proven Results</div>
+                    <div class="desc">Track ROI</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing">
+        <div class="section-header fade-in">
+            <span class="section-badge">Pricing</span>
+            <h2>Simple, <span class="text-gradient">Transparent</span> Pricing</h2>
+            <p>One plan. Everything you need to automate your business.</p>
+        </div>
+        <div class="pricing-container fade-in">
+            <div class="pricing-glow"></div>
+            <div class="pricing-card">
+                <span class="pricing-badge">Most Popular</span>
+                <div class="pricing-header">
+                    <h3>The Small Business Starter</h3>
+                    <div class="price">
+                        <span class="amount">$50</span>
+                        <span class="period">/month</span>
+                    </div>
+                    <p>Everything you need to get started with AI automation</p>
+                </div>
+                <ul class="features-list">
+                    <li>
+                        <span class="check-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                        </span>
+                        <span>Custom AI Chatbot trained on <strong>your</strong> prices & FAQs</span>
+                    </li>
+                    <li>
+                        <span class="check-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                        </span>
+                        <span>Instant lead alerts to your phone & email</span>
+                    </li>
+                    <li>
+                        <span class="check-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                        </span>
+                        <span>Calendar booking integration (Google/Outlook)</span>
+                    </li>
+                    <li>
+                        <span class="check-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                        </span>
+                        <span>Basic invoice/email automation</span>
+                    </li>
+                    <li>
+                        <span class="check-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                        </span>
+                        <span>Monthly performance report + tweaks</span>
+                    </li>
+                    <li>
+                        <span class="check-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                        </span>
+                        <span>No contracts. Cancel anytime.</span>
+                    </li>
+                </ul>
+                <div class="pricing-footer">
+                    <a href="#contact" class="btn btn-primary btn-lg">
+                        Claim This Plan
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                    </a>
+                    <p class="pricing-note">14-day money-back guarantee • No credit card required</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="section-header fade-in">
+            <span class="section-badge">Get Started</span>
+            <h2>Ready for Your <span class="text-gradient">Free Audit?</span></h2>
+            <p>Fill in the form or WhatsApp me—I'll record a 3-minute video showing exactly what AI can do for your trade.</p>
+        </div>
+        <div class="contact-container fade-in">
+            <form class="contact-form" id="contactForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Your Name</label>
+                        <input type="text" placeholder="John Smith" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" placeholder="john@yourbusiness.com" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Business Name & Trade</label>
+                    <input type="text" placeholder="e.g. Pete's Plumbing">
+                </div>
+                <div class="form-group">
+                    <label>Biggest Time-Waster Right Now?</label>
+                    <textarea placeholder="Tell me what's eating up your time..."></textarea>
+                </div>
+                <div class="form-footer">
+                    <button type="submit" class="btn btn-primary btn-lg">
+                        Send & Book My Audit
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                    </button>
+                    <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-muted);">
+                        Or message me directly on <a href="https://wa.me/+2349162104771?text=I%20want%20my%20free%20AI%20audit" target="_blank" class="whatsapp-link">WhatsApp</a>
+                    </p>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <div class="footer-logo-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                </div>
+                <span class="footer-logo-text">Mautomate <span>AI</span></span>
+            </div>
+            <p class="footer-tagline">Stop letting tech hold you back. While your competitors are stuck in 2015, we'll put your business on autopilot.</p>
+            <p class="footer-copy">© 2026 Mautomate AI. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/+2349162104771?text=I%20want%20my%20free%20AI%20audit" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+    </a>
+
+    <script>
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Rotating trade words
+        const tradeWords = ['Plumbing', 'HVAC', 'Legal', 'Roofing', 'Medical', 'Electrical', 'Carpentry'];
+        let currentIndex = 0;
+        const tradeWordEl = document.getElementById('trade-word');
+
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % tradeWords.length;
+            tradeWordEl.style.opacity = '0';
+            tradeWordEl.style.transform = 'translateY(20px)';
+            tradeWordEl.style.filter = 'blur(10px)';
+            
+            setTimeout(() => {
+                tradeWordEl.textContent = tradeWords[currentIndex];
+                tradeWordEl.style.opacity = '1';
+                tradeWordEl.style.transform = 'translateY(0)';
+                tradeWordEl.style.filter = 'blur(0)';
+            }, 300);
+        }, 2500);
+
+        // Fade in animation on scroll
+        const fadeElements = document.querySelectorAll('.fade-in');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        fadeElements.forEach(el => observer.observe(el));
+
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            this.innerHTML = `
+                <div class="success-message">
+                    <div class="success-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12"/>
+                        </svg>
+                    </div>
+                    <h3>Thank You!</h3>
+                    <p>I'll be in touch within 24 hours with your personalized AI audit video.</p>
+                </div>
+            `;
+        });
+    </script>
+</body>
+</html>
