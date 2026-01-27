@@ -1,46 +1,33 @@
-# 🚀 Mautomate: Modern Automation for Trade Businesses
+# 🚀 Mautomate: Modern Trade Systems
 
-[![Site Status](https://img.shields.io/website?url=https%3A%2F%2Fmautomate.netlify.app%2F)](https://mautomate.netlify.app/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+**Bringing 24/7 AI Automation to Local Businesses.**
 
-> **Mautomate** is a high-performance AI automation engine designed to help local trades (Plumbing, HVAC, Electrical) capture leads 24/7. It replaces manual paperwork and missed calls with intelligent, autonomous systems.
-
----
-
-## 🌐 Live Demo & Services
-Check out the live dashboard and automation landing page here:  
-👉 **[https://mautomate.netlify.app/](https://mautomate.netlify.app/)**
+I build "Digital Brains" for trade companies (Plumbing, HVAC, Electrical) that capture every lead, book every job, and save owners 10+ hours a week.
 
 ---
 
-## 🛠 Features
+## 🌐 The Platform
+Experience the Mautomate ecosystem live:  
+👉 **[Visit Mautomate.netlify.app](https://mautomate.netlify.app/)**
 
-- **24/7 AI Receptionist:** Never miss a lead again. Our AI handles inquiries and bookings while you're on the job.
-- **Smart Knowledge Base:** Trained on specific business data (services, pricing, and service areas) using RAG (Retrieval-Augmented Generation).
-- **Lead Capture & Notifications:** Instant text or email alerts as soon as a customer shows interest.
-- **Zero-Code Integration:** Easy-to-install chat widgets for existing business websites.
+---
 
-## 🏗 System Architecture
+## 🛠 What I Do
+I bridge the gap between "Old School" service and "Modern" speed. My systems are private, secure, and require zero technical knowledge from the business owner.
 
-Mautomate uses a multi-tenant backend architecture to ensure data security and lightning-fast response times.
+- **AI Front-Desk:** A 24/7 receptionist that never sleeps, never misses a call, and knows your business inside out.
+- **Lead Capture Vault:** Every customer inquiry is instantly captured and routed to your phone.
+- **Auto-Sync:** I connect your website directly to your billing and calendar software.
 
+## ⚡ Performance
+- **99% Response Rate:** Every web lead is engaged in under 3 seconds.
+- **Zero Hallucination:** Systems are strictly locked to your specific business facts.
+- **Scalable Hosting:** Ultra-low latency serving via private Qwen/Gemma inference engines.
 
+## 💼 Let's Talk Business
+I don't just write code; I build profit engines. If you're a local business owner looking to automate your workflow, visit the site to book a free 10-minute audit.
 
-- **Frontend:** Responsive HTML5/Tailwind CSS hosted on Netlify.
-- **Backend API:** FastAPI (Python) for high-concurrency lead handling.
-- **AI Brain:** Qwen 3 (1.7B) & Gemma 3 (270M) served via vLLM for ultra-low latency.
-- **Security:** Domain-locked CORS and encrypted Business API keys.
+[**Get Your Free Audit**](https://mautomate.netlify.app/#contact)
 
-## 🚀 Getting Started
-
-If you are a developer looking to contribute or self-host:
-
-### Prerequisites
-- Python 3.9+
-- [Ollama](https://ollama.com/) or a vLLM instance.
-
-### Installation
-1. Clone the repo:
-   ```bash
-   git clone [https://github.com/your-username/mautomate.git](https://github.com/your-username/mautomate.git)
-   cd mautomate
+---
+*Mautomate: Modernizing the Trades, One Lead at a Time.*
