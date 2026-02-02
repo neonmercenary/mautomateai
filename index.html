@@ -896,6 +896,71 @@
             font-size: 0.85rem;
         }
 
+        /* Team Section Styles */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .team-card {
+            background: var(--bg-glass);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .team-card:hover {
+            border-color: rgba(201, 162, 39, 0.4);
+            transform: translateY(-5px);
+        }
+
+        .team-image {
+            margin-bottom: 1.5rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        .team-avatar-placeholder {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, var(--gold-light), var(--gold), var(--gold-dark));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--bg);
+            box-shadow: 0 10px 20px -5px rgba(201, 162, 39, 0.3);
+        }
+
+        .team-info h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .team-role {
+            color: var(--gold);
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 1rem;
+        }
+
+        .team-bio {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
         /* WhatsApp Float */
         .whatsapp-float {
             position: fixed;
@@ -1060,6 +1125,8 @@
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
         </div>
     </section>
+
+    
 
     <!-- Problems Section -->
     <section id="problems">
@@ -1249,6 +1316,49 @@
                     <p class="pricing-note">14-day money-back guarantee • No credit card required</p>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <section id="team">
+        <div class="section-header fade-in">
+            <span class="section-badge">The Architects</span>
+            <h2>The Minds Behind the <span class="text-gradient">Automation</span></h2>
+            <p>We combine deep technical expertise with a passion for helping trade businesses scale.</p>
+        </div>
+
+        <div class="team-grid">
+            <div class="team-card fade-in">
+                <div class="team-image">
+                    <div class="team-avatar-placeholder">MB</div>
+                </div>
+                <div class="team-info">
+                    <h3>Mgbeoji Benjamin</h3>
+                    <p class="team-role">Founder & Systems Architect</p>
+                    <p class="team-bio">Specializing in building "Digital Brains" for businesses that want to reclaim their time.</p>
+                </div>
+            </div>
+
+            <div class="team-card fade-in">
+                <div class="team-image">
+                    <div class="team-avatar-placeholder">SC</div>
+                </div>
+                <div class="team-info">
+                    <h3>Amobi Ebubechukwu Chukwuemelie</h3>
+                    <p class="team-role">Solutions Consultant</p>
+                    <p class="team-bio">Expert in auditing workflows and designing custom AI strategies for trade professionals.</p>
+                </div>
+            </div>
+
+            <!-- <div class="team-card fade-in">
+                <div class="team-image">
+                    <div class="team-avatar-placeholder">AS</div>
+                </div>
+                <div class="team-info">
+                    <h3>[Name Here]</h3>
+                    <p class="team-role">Automation Specialist</p>
+                    <p class="team-bio">Ensuring your AI assistants are running smoothly and syncing perfectly with your CRM.</p>
+                </div>
+            </div> -->
         </div>
     </section>
 
